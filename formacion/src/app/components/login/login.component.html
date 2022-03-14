@@ -1,0 +1,64 @@
+<div *ngIf="!validition" class="container">
+    
+    <!-- logo -->
+    <div>
+        <img class="d-grid gap-2 col-7 mx-auto my-4" src="./assets/img/bdb_logo.svg" alt="Banco de Bogotá">
+    </div>
+
+    <!-- <div>
+        <div><h5 id="t1" class="titulo">Bienvenido a</h5></div>
+        <div><h4 id="t2" class="titulo">Logs </h4></div>
+    </div>
+     -->
+
+    <!-- formulario Login -->
+    <div class="mat-elevation-z9 mx-auto tarjeta ">
+        <div>
+           <h5 class="texto">Ingresa con tu cuenta de usuario</h5>
+        </div>
+
+        <form [formGroup] = "loginForm" (ngSubmit) = "login()">
+
+            <div class="d-grid gap-2 col-10 mx-auto my-0"> 
+                <mat-form-field appearance="outline">
+                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                    <input
+                    class="uk-input" 
+                    type="text" 
+                    placeholder="Nombre de usuario" 
+                    formControlName="usuario"
+                    autocomplete="off"
+                    matInput
+                    >
+                </mat-form-field>
+            </div>
+        
+            <div class="d-grid gap-2 col-10 mx-auto my-0">
+                <mat-form-field appearance="outline">
+                    <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                    <input 
+                    class="uk-input" 
+                    [attr.type]="eyeOpened ? 'text' : 'password'" 
+                    type="text" 
+                    placeholder="Contraseña"    
+                    formControlName="password" 
+                    autocomplete="off"
+                    matInput>
+                    <button class="right-I" type="button" (mouseup)="eye()" (mousedown)="eye()">
+                        <fa-icon *ngIf="eyeOpened" [icon]="ojo"></fa-icon>
+                        <fa-icon *ngIf="!eyeOpened" [icon]="ojoCerrado"></fa-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+
+            <div class="d-grid gap-2 col-4 mx-auto boton">
+                <button type="submit" class="btn btn-primary"
+                [disabled]="loginForm.invalid" >Ingresar</button>
+            </div>
+        
+        </form>
+    </div>
+</div>
+
+<app-dash-board *ngIf="validition" ></app-dash-board>
+    

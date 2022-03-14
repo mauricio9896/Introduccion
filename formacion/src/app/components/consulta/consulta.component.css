@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+.acciones{
+  width: 7%;
+}
+
+.mat-form-field {
+  width: 40%;
+}
+
+#textTitle{
+  position: relative;
+  float: right;
+}
+#botonTitle{
+  position: relative;
+  float: right;
+}

@@ -1,0 +1,49 @@
+.container{
+    width: 35%;
+}
+.uk-input{
+    width: auto;
+    height: 15px;
+}
+.btn, .btn-primary{
+    background-color:#0E00D4;
+}
+.tarjeta{
+    border-radius: 4%;
+}
+.right-I{
+
+    position: absolute;
+    background: none;
+    right: 5px; 
+    top: 8px;
+    outline: none;
+    border: none;
+    width: 30px;
+    color: #adb5bd;
+}
+
+.boton{
+    padding-bottom: 25px;
+}
+
+.texto{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    padding-top: 25px;
+    text-align: center;
+    color: #adb5bd;
+}
+
+/* .titulo{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: black;
+    margin-bottom: 0%;
+}
+
+#t1{  
+    margin-top: 30px;
+}
+
+#t2{  
+    margin-bottom: 10px;
+} */

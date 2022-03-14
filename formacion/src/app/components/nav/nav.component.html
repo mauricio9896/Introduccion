@@ -1,0 +1,33 @@
+<nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+
+    <div class="uk-navbar-left">
+            <a class="uk-navbar-item uk-logo uk-background-default Logo" [routerLink]="['/inicio']">
+                <img src="assets/img/Banco_de_Bogotá.jpg" alt="">
+            </a>
+    </div>
+
+    <div class="uk-navbar-center">
+        <ul class="uk-navbar-nav" uk-tab>
+            <li><a [routerLink]="['/inicio']">Inicio</a></li>
+            <li><a [routerLink]="">Servicios</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li><a href="#">Serivcio1</a></li>
+                        <li><a href="#">Servicio2</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a [routerLink]="['/consulta']">Consultas</a></li>
+        </ul>
+    </div>
+
+    <div class="uk-navbar-right">
+        <a class="uk-navbar-toggle uk-background-default" (click)="estado =!estado" (click)="modificar()">
+            <span class="uk-margin-small-left">Menu</span>
+            <span *ngIf="estado;" uk-icon="close"></span>
+            <span *ngIf="!estado" uk-navbar-toggle-icon></span>
+            
+        </a>
+    </div>
+</nav>
+

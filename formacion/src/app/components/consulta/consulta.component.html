@@ -1,0 +1,59 @@
+<div class="container">
+
+    <mat-toolbar>
+        <span>Usuarios</span>
+        <button type="button" class="btn btn-outline-primary" [routerLink]="['/inicio']">Agregar</button>
+    </mat-toolbar>
+    <br>
+    
+    <div>
+        <mat-form-field appearance="legacy">
+            <mat-label>Filtrar Usuario</mat-label>
+            <input matInput (keyup)="applyFilter($event)" #input placeholder=" " autocomplete="off">
+        </mat-form-field>
+    </div>
+    
+    <div class="mat-elevation-z8 mx-auto">
+    
+        <table mat-table [dataSource]="dataSource" matSort>
+    
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>ID</th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+    
+            
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+    
+            
+            <ng-container matColumnDef="gender">
+                <th mat-header-cell *matHeaderCellDef> Genero </th>
+                <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+            </ng-container>
+    
+            <!-- onclick="UIkit.notification({message: 'Usuario eliminado' , pos: 'top-right'})"
+             -->
+             
+            <ng-container matColumnDef="acciones">
+                <th class="acciones" mat-header-cell *matHeaderCellDef></th>
+                <td class="acciones" mat-cell *matCellDef="let element" style="text-align: right;">
+                    <a (click)= "eliminar(element.id)" matTooltip="Eliminar">
+                        <span uk-icon="trash" style="color: red;"></span>
+                    </a>
+                    <a (click)= "editar(element.id)" [routerLink]= "'/inicio'"matTooltip="Editar">
+                        <span uk-icon="pencil" style="color: blue;"></span>
+                    </a>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 50]" aria-label="Select page of users">
+        </mat-paginator>
+    </div>
+</div>
